@@ -1,0 +1,77 @@
+html {
+  box-sizing: border-box;
+  font-size: 100%;
+}
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+}
+:root {
+  /* --headerBackground-color: rgb(26, 26, 26); */
+  --headerBackground-color: rgb(226, 226, 226);
+  --background-quests: linear-gradient(
+    to bottom,
+    rgb(0, 0, 0) 60%,
+    rgba(189, 189, 189, 0.829) 100%
+  );
+  --background: rgb(43, 187, 223);
+  --borders-text-game: white;
+  --borders-text-black: black;
+  --text-quest: rgb(255, 255, 255);
+}
+body {
+  padding: 0;
+  margin: 0;
+  background-color: var(--background);
+}
+
+/* GLOBAL TYPOGRAPHY */
+h1,
+h2,
+h3,
+h4,
+h5,
+button,
+p {
+  font-family: "Press Start 2P", cursive;
+}
+button,
+a {
+  cursor: pointer;
+}
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-weight: 400;
+}
+
+p,
+button {
+  line-height: 24px;
+}
+/* Largura da barra de rolagem */
+::-webkit-scrollbar {
+  width: 8px;
+  border-radius: 14px;
+}
+
+/* Fundo da barra de rolagem */
+::-webkit-scrollbar-track {
+  background: #000000;
+}
+
+/* Estilo da barra de rolagem */
+::-webkit-scrollbar-thumb {
+  background-color: #ffffff; /* Cor da barra */
+  border-radius: 8px; /* Arredondamento */
+  border: 2px solid #49474700; /* Espaço ao redor da barra */
+}
+
+/* Ao passar o mouse sobre a barra de rolagem */
+::-webkit-scrollbar-thumb:hover {
+  border-radius: 14px;
+  background-color: #0077ff00;
+}

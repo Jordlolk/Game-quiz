@@ -1,0 +1,155 @@
+.progress-bar::after {
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: var(--progress, 0%);
+  transition: width 1s ease-in-out;
+  content: "";
+  padding: 7px;
+  height: 10px;
+  background: linear-gradient(to right, rgb(0, 250, 0), red);
+  border-radius: 6px;
+}
+.progress-container {
+  padding: 18px;
+}
+
+.title_list div {
+  color: var(--borders-text-game);
+  font-size: 1em;
+  height: 32px;
+  background-color: rgb(30, 31, 31);
+  border-radius: 80px;
+}
+
+.title_list h4 {
+  text-shadow: 2px 2px 2px rgb(0, 0, 0);
+  color: var(--borders-text-game);
+  text-transform: uppercase;
+  font-weight: bolder;
+  margin-top: -8px;
+}
+
+.title_list h5 {
+  text-shadow: 2px 2px 2px rgb(0, 0, 0);
+  color: var(--borders-text-game);
+  text-transform: uppercase;
+  font-weight: bolder;
+}
+.quest_list button:hover {
+  background: linear-gradient(to top, black 10%, rgb(83, 74, 74) 90%);
+}
+.quests {
+  color: var(--borders-text-game);
+  text-decoration: none;
+  text-transform: uppercase;
+  width: 200px;
+  height: fit-content;
+  font-size: 0.8em;
+  padding: 16px;
+  background: var(--background-quests);
+  border: 2px solid;
+  border-image: linear-gradient(180deg, rgb(0, 4, 255), rgb(255, 0, 0)) 1;
+}
+
+.text_quest {
+  font-size: 1em;
+  text-align: start;
+  color: var(--text-quest);
+  font-weight: bolder;
+}
+
+.quest_buttons {
+  appearance: none;
+  background-color: black;
+  border: 2px groove;
+  border-radius: 4px;
+  color: var(--borders-text-game);
+  padding: 4px;
+  width: 8em;
+  text-transform: uppercase;
+  font-weight: 800;
+  font-size: 1.2em;
+  transition: opacity 1s ease-in-out;
+}
+.quest_buttons.animateButtons {
+  opacity: 0.4;
+}
+.buttons_config {
+  transition: 1s ease;
+  border-radius: 1em;
+  border: 2px solid rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.74);
+  font-weight: 900;
+  padding: 8px;
+  font-size: 0.8em;
+}
+
+.buttons_config:nth-child(1) {
+  color: rgb(255, 69, 69);
+}
+.buttons_config:nth-child(2) {
+  color: rgb(0, 255, 42);
+}
+.buttons_config:nth-child(3) {
+  color: rgb(0, 225, 255);
+}
+.buttons_config:nth-child(4) {
+  color: white;
+}
+
+#level.animate {
+  animation: levelUp 4s backwards;
+}
+#level {
+  margin-bottom: 0px;
+  padding: 8px;
+  position: relative;
+  z-index: 1;
+}
+#level::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 1px;
+  right: 0;
+  bottom: 0;
+  width: 0;
+  border-radius: 20px;
+  z-index: -1;
+  background: linear-gradient(to right, rgb(255, 0, 0) 20%, rgb(0, 255, 0) 80%);
+  box-shadow: 2px -1px 10px rgb(255, 0, 0);
+  transition: 1.5s ease-in-out;
+}
+#level.expand::after {
+  width: 100%;
+}
+.red-text-effect {
+  transition: 0.8s ease-in-out;
+  animation: error 2s infinite;
+}
+@keyframes error {
+  0% {
+    color: white;
+    text-shadow: 1px 1px 4px red;
+  }
+  50% {
+    color: red;
+    text-shadow: 1px 1px 4px red;
+  }
+  100% {
+    color: white;
+    text-shadow: 1px 1px 4px rgba(255, 0, 0, 0);
+  }
+}
+@keyframes levelUp {
+  0% {
+    scale: 1.1;
+  }
+  50% {
+    scale: 1.4;
+  }
+  100% {
+    scale: 1;
+  }
+}
