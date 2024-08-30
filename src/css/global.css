@@ -8,7 +8,7 @@ html {
   box-sizing: inherit;
 }
 :root {
-  /* --headerBackground-color: rgb(26, 26, 26); */
+  --headerBackground-black: rgb(26, 26, 26);
   --headerBackground-color: rgb(226, 226, 226);
   --background-quests: linear-gradient(
     to bottom,

@@ -52,7 +52,7 @@
   position: fixed;
   z-index: 1;
   top: 0;
-  background: var(--headerBackground-color);
+  background: var(--headerBackground-black);
   border-bottom: 2px solid;
   border-image: line;
   .header_title {
@@ -132,7 +132,7 @@
 
 .footer_main {
   padding: 1em;
-  background: var(--headerBackground-color);
+  background: var(--headerBackground-black);
 }
 
 .configs_game {
