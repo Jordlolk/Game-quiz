@@ -39,14 +39,13 @@ export default function Main(){
     let sterEggsAnswer = [   /* I´m try to place the sterEggs in an array of objects. To try to make more easier to handle this functionality */
         {
             name : 'skyrim',
-            img : `url(${require('../img/235470.jpg')})` /* Not done yet */
+            img : `url(${require('../img/skyrim.jpg')})` /* Not done yet */
         },
         {
             name : 'sonic',
-            img : `url(${require('../img/235470.jpg')})`
+            
         }
     ]
-    console.log(sterEggsAnswer[0], sterEggsAnswer[1].name);
     function expMission(expGain){
 /* Here I call the setExp state to change it to a new value. What´s more, I can make more stuff with it, like treat the max EXP*/
         setExp((exp) => {
@@ -73,7 +72,7 @@ export default function Main(){
             if(possibleAnswers.includes(userAnswer)){ 
                 window.alert("You are a legend!")
                 expMission(80) /* 72-77 - here is where I will treat the sterEgg of skyrim.*/
-                setEgg('skyrim')
+                setEgg(correctAnswer)
                 return
             }
             if(verifyUsrAnswer || parseInt(userAnswer) === parseInt(correctAnswer)){
@@ -90,9 +89,16 @@ export default function Main(){
         }
     }
     useEffect(() => {
-        if(sterEgg === "skyrim"){
-            mainContentRef.current.style.backgroundImage =  `url(${require('../img/235470.jpg')})`  /* useEffect to activate Skyrim´s sterEgg */   
-        }}, [sterEgg])
+        switch (sterEgg){
+            case 'sonic':
+                mainContentRef.current.style.setProperty('--background', `${`url(${require('../img/sonic.jpg')}`}`)
+            break;
+            case 'skyrim':
+                mainContentRef.current.style.setProperty('--background', `${`url(${require('../img/skyrim.jpg')}`}`)
+            break;
+        }
+        }, [sterEgg])
+
         return (
         <main className="main_content" ref={mainContentRef}>
         <section className="list_screen">
@@ -112,8 +118,8 @@ export default function Main(){
                     </p>
                     <button
                         className="quest_buttons"
-                        data-ans="4"
-                        data-expquest="20"
+                        data-ans="crash"
+                        data-expquest="100"
                         onClick={(event) => mission(
                             event.target.getAttribute('data-ans'), 
                             event.target.getAttribute('data-expquest'))
@@ -171,7 +177,7 @@ export default function Main(){
                         What is Skyrim?
                     </p>
                     <button
-                        data-ans={typeof('')}
+                        data-ans='skyrim'
                         data-expquest="60"
                         className="quest_buttons"
                         onClick={(event) => mission(
@@ -186,7 +192,7 @@ export default function Main(){
                         What is the name of the blue Hedgehog?
                     </p>
                     <button
-                        data-ans={'sonic'}
+                        data-ans='sonic'
                         data-expquest="50"
                         className="quest_buttons"
                         onClick={(event) => mission(

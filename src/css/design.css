@@ -7,7 +7,7 @@
   content: "";
   padding: 7px;
   height: 10px;
-  background: linear-gradient(to right, rgb(0, 250, 0), red);
+  background: linear-gradient(to right, rgb(255, 255, 255), rgb(255, 255, 255));
   border-radius: 6px;
 }
 .progress-container {
@@ -36,20 +36,29 @@
   text-transform: uppercase;
   font-weight: bolder;
 }
+
 .quest_list button:hover {
-  background: linear-gradient(to top, black 10%, rgb(83, 74, 74) 90%);
+  background: linear-gradient(to top, rgb(255, 149, 0) 10%, rgb(255, 0, 0) 90%);
 }
 .quests {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   color: var(--borders-text-game);
   text-decoration: none;
   text-transform: uppercase;
-  width: 200px;
+  width: 400px;
   height: fit-content;
   font-size: 0.8em;
   padding: 16px;
-  background: var(--background-quests);
+  background: linear-gradient(
+    to left,
+    rgba(88, 0, 102, 0),
+    rgba(0, 0, 0, 0.207) 80%
+  );
   border: 2px solid;
-  border-image: linear-gradient(180deg, rgb(0, 4, 255), rgb(255, 0, 0)) 1;
+  border-image: linear-gradient(to left, rgb(200, 0, 255), rgba(0, 0, 0, 0))
+  1;
 }
 
 .text_quest {
@@ -66,7 +75,7 @@
   border-radius: 4px;
   color: var(--borders-text-game);
   padding: 4px;
-  width: 8em;
+  width: 9em;
   text-transform: uppercase;
   font-weight: 800;
   font-size: 1.2em;

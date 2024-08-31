@@ -13,9 +13,9 @@ html {
   --background-quests: linear-gradient(
     to bottom,
     rgb(0, 0, 0) 60%,
-    rgba(189, 189, 189, 0.829) 100%
+    rgba(0, 0, 0, 0.829) 100%
   );
-  --background: rgb(43, 187, 223);
+  --background: rgb(0, 0, 0);
   --borders-text-game: white;
   --borders-text-black: black;
   --text-quest: rgb(255, 255, 255);
