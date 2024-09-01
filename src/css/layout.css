@@ -61,10 +61,14 @@
   }
 }
 .main_header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
   width: 100%;
   padding: 1px;
   position: fixed;
-  z-index: 1;
+  z-index: 2;
   top: 0;
   background: var(--headerBackground-black);
   border-bottom: 2px solid rgb(255, 255, 255);
@@ -77,8 +81,26 @@
     text-transform: uppercase;
   }
 }
+.main_header .content {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  justify-content: center;
+  width: 100%;
+}
 
-@media (min-width: 600px) {
+.main_content::after {
+  position: absolute;
+  top: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100vh;
+  content: "";
+  background-image: var(--background);
+  transition: background-image 1s ease-in-out;
+}
+
+@media (min-width: 700px) {
   .main_content {
     position: relative;
     background: linear-gradient(to right, rgba(0, 0, 0, 0), rgb(0, 0, 0) 60%);
@@ -89,7 +111,7 @@
     background-position: left;
   }
 }
-@media (max-width: 601px) {
+@media (max-width: 701px) {
   .main_content {
     background: linear-gradient(
       to right,
@@ -104,16 +126,6 @@
     background-position: center;
   }
 }
-.main_content::after {
-  position: absolute;
-  top: 0;
-  z-index: -1;
-  width: 100%;
-  height: 100vh;
-  content: "";
-  background-image: var(--background);
-  transition: background-image 1s ease-in-out;
-}
 .list_screen {
   position: relative;
   background-color: rgba(184, 0, 0, 0);
@@ -125,7 +137,7 @@
   h2 {
     text-transform: uppercase;
     text-shadow: 1px 1px white;
-    margin-top: 2em;
+    margin-top: 3.2em;
     color: var(--borders-text-game);
     width: fit-content;
     text-align: center;
@@ -170,7 +182,7 @@
   animation: borderMove 4s ease-in-out infinite;
   padding: 16px;
   overflow-y: auto;
-  background-color: rgba(0, 0, 0, 0);
+  background-color: rgba(255, 2, 2, 0);
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
@@ -191,11 +203,30 @@
   width: 100%;
   gap: 2em;
 }
+@keyframes borderMove2 {
+  0% {
+    box-shadow: 1px 1px 14px rgba(255, 230, 0, 0);
+    border: 4px solid rgba(255, 230, 0, 0.423);
+  }
+  50% {
+    box-shadow: 1px 1px 14px rgba(255, 230, 0, 0.836);
+    border: 4px solid rgb(255, 230, 0);
+  }
+  100% {
+    box-shadow: 1px 1px 14px rgba(255, 230, 0, 0);
+    border: 4px solid rgba(255, 230, 0, 0.535);
+  }
+}
 .configs_game .buttons_config {
-  animation: borderMove 2s infinite;
+  animation: borderMove2 4s linear infinite;
 }
 .buttons_config {
   padding: 4px;
   width: 100px;
-  border: 4px solid rgba(255, 230, 0, 0.836);
+  border: 4px solid rgb(0, 255, 68);
+  transition: box-shadow 2s ease-in-out;
+}
+.buttons_config:hover {
+  animation: none;
+  box-shadow: 1px 1px 14px rgba(0, 255, 17, 0.836);
 }

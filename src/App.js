@@ -1,10 +1,8 @@
-import Header from "./components/header";
-import Main from "./components/main";
+import Main from "./components/header_main";
 import Footer from "./components/footer";
 function App() {
   return (
     <>
-      <Header/>
       <Main/>
       <Footer/>
     </>

@@ -1,6 +1,21 @@
+.header_title {
+  text-align: center;
+}
+.progress-container {
+  display: flex;
+  color: var(--borders-text-game);
+  font-size: 1em;
+}
+
+.progress-container h3 {
+  position: relative;
+  border: 2px solid;
+  border-radius: 14px;
+  width: 100px;
+}
+
 .progress-bar::after {
   position: absolute;
-  bottom: -1px;
   left: 0;
   width: var(--progress, 0%);
   transition: width 1s ease-in-out;
@@ -10,16 +25,8 @@
   background: linear-gradient(to right, rgb(255, 255, 255), rgb(255, 255, 255));
   border-radius: 6px;
 }
-.progress-container {
-  padding: 18px;
-}
 
-.title_list div {
-  color: var(--borders-text-game);
-  font-size: 1em;
-  height: 32px;
-  background-color: rgb(30, 31, 31);
-  border-radius: 80px;
+.progress-container {
 }
 
 .title_list h4 {
@@ -52,13 +59,12 @@
   font-size: 0.8em;
   padding: 16px;
   background: linear-gradient(
-    to left,
-    rgba(88, 0, 102, 0),
-    rgba(0, 0, 0, 0.207) 80%
+    to right,
+    rgb(0, 0, 0),
+    rgba(255, 255, 255, 0.378) 80%
   );
   border: 2px solid;
-  border-image: linear-gradient(to left, rgb(200, 0, 255), rgba(0, 0, 0, 0))
-  1;
+  border-image: linear-gradient(to left, rgb(200, 0, 255), rgba(0, 0, 0, 0)) 1;
 }
 
 .text_quest {
